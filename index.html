@@ -64,6 +64,558 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-二进制数获取每一位" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/19/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E8%8E%B7%E5%8F%96%E6%AF%8F%E4%B8%80%E4%BD%8D/" class="article-date">
+  <time datetime="2020-09-19T01:12:27.000Z" itemprop="datePublished">2020-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/19/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E8%8E%B7%E5%8F%96%E6%AF%8F%E4%B8%80%E4%BD%8D/">二进制数获取每一位</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuunawl.github.io/2020/09/19/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E8%8E%B7%E5%8F%96%E6%AF%8F%E4%B8%80%E4%BD%8D/" data-id="ckfbszupo0000v4u3bekwbq61" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-小学期01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/12/%E5%B0%8F%E5%AD%A6%E6%9C%9F01/" class="article-date">
+  <time datetime="2020-09-12T12:15:38.000Z" itemprop="datePublished">2020-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/12/%E5%B0%8F%E5%AD%A6%E6%9C%9F01/">小学期01</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="router跳转"><a href="#router跳转" class="headerlink" title="router跳转"></a>router跳转</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例如</span><br><span class="line">在path 键对中填写需要跳转的路由</span><br><span class="line">this.$router.push(&#123; path: &quot;&#x2F;videoList&quot; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>也可以通过路由传参，有三个基本方法</p>
+<h5 id="方案一：直接通过参数传参"><a href="#方案一：直接通过参数传参" class="headerlink" title="方案一：直接通过参数传参"></a>方案一：直接通过参数传参</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&#123; path: &quot;&#x2F;videoList&quot;&#x2F;$&#123;id&#125; &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>需要对应的路由配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path： &#39;&#x2F;videoList&#x2F;：vid&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="方案二：通过params传参"><a href="#方案二：通过params传参" class="headerlink" title="方案二：通过params传参"></a>方案二：通过params传参</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jumpToVideoPlay(index) &#123;</span><br><span class="line">this.$router.push(&#123; path: &#39;&#x2F;videoplay&#39;, params: &#123; url:             &#39;http:&#x2F;&#x2F;10.136.215.124:1234&#x2F;&#39;+this.videoList[index].Path+&#39;&#x2F;&#39;+this.videoList[index].VideoName+&#39;.&#39;+&#39;mp4&#39;&#125;&#125;);       </span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>通过this.$router.params.url调用</p>
+<h5 id="方案三：通过query传参"><a href="#方案三：通过query传参" class="headerlink" title="方案三：通过query传参"></a>方案三：通过query传参</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jumpToVideoPlay(index) &#123;</span><br><span class="line">this.$router.push(&#123; path: &#39;&#x2F;videoplay&#39;, query: &#123; url:             &#39;http:&#x2F;&#x2F;10.136.215.124:1234&#x2F;&#39;+this.videoList[index].Path+&#39;&#x2F;&#39;+this.videoList[index].VideoName+&#39;.&#39;+&#39;mp4&#39;&#125;&#125;);       </span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>通过this.$router.query.url调用</p>
+<h3 id="第一次迭代回顾"><a href="#第一次迭代回顾" class="headerlink" title="第一次迭代回顾"></a>第一次迭代回顾</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuunawl.github.io/2020/09/12/%E5%B0%8F%E5%AD%A6%E6%9C%9F01/" data-id="ckf0o1mtd0001jku34ebp7s8v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Vue的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/08/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-date">
+  <time datetime="2020-09-08T06:14:18.000Z" itemprop="datePublished">2020-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/08/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Vue的生命周期</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期"></a>Vue的生命周期</h1><p><strong>一、vue的生命周期是什么</strong></p>
+<p>  vue每个组件都是独立的，每个组件都有一个属于它的生命周期，从一个组件<strong>创建、数据初始化、挂载、更新、销毁</strong>，这就是一个组件所谓的生命周期。在组件中具体的方法有:</p>
+<p>  beforeCreate</p>
+<p>  created</p>
+<p>  beforeMount</p>
+<p>  mounted</p>
+<p>  (</p>
+<p>​     beforeUpdate</p>
+<p>​     updated</p>
+<p>   )</p>
+<p>  beforeDestroy</p>
+<p>  destroyed</p>
+<p>  对应的中文就如其字面意思，英文不好的童鞋可以有道翻翻</p>
+<p>  好了，这里要上图啦<del>~</del></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-eaf493b1b2050a93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720/format/webp" alt="img"></p>
+<p><strong>二、vue生命周期的在项目中的执行顺序</strong></p>
+<p>…</p>
+<p>data () {</p>
+<p>  return {</p>
+<p>  rendered: false,</p>
+<p>}</p>
+<p>}</p>
+<p>…</p>
+<p>1.beforeCeate(){</p>
+<p>  console.log(this.rendered);  // undefined </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-5727fdabcfab0a7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/530/format/webp" alt="img"></p>
+<p>}</p>
+<p>2.created() {</p>
+<p>  console.log(this.$el);//undefined</p>
+<p>   console.log(this.rendered); // false</p>
+<p>}</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-6d94d9db2f52a7c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/532/format/webp" alt="img"></p>
+<p>3.beforeMount() {</p>
+<p>  console.log(this.$el)；//undefined</p>
+<p>}</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-9c382de4ef59b6ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/520/format/webp" alt="img"></p>
+<p>4.mounted() {</p>
+<p>  console.log(this.$el);</p>
+<p>}</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-095add76ef7c1953.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/536/format/webp" alt="img"></p>
+<p>5.beforeDestroty(){</p>
+<p>  console.log(this.$el);</p>
+<p>  console.log(this.rendered); </p>
+<p>}</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-4980a396e64eee6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/535/format/webp" alt="img"></p>
+<p>6.destroyed() {</p>
+<p>  console.log(this.$el);</p>
+<p>  console.log(this.rendered);</p>
+<p>}</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-c8feee355871be70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/538/format/webp" alt="img"></p>
+<p><strong>三、vue中内置的方法 属性和vue生命周期的运行顺序（methods、computed、data、watch、props)</strong></p>
+<p>  从第一二点可知道data的初始化是在created时已经完成数据观测(data observer)，并且诸如methods、computed属性 props等已经初始化；那问题来了，</p>
+<p>data props computed watch methods他们之间的生成顺序是什么呢？</p>
+<p>根据翻看vue源码可知：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13119812-551024dfb2fe9961.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/477/format/webp" alt="img"></p>
+<p><strong>props =&gt; methods =&gt;data =&gt; computed =&gt; watch</strong>; 懂了没 </p>
+<p><strong>四、自己构造的方法与vue生命周期的运行顺序 如show这些</strong></p>
+<p>  往往我们在开发项目时都经常用到 $refs 来直接访问子组件的方法，但是这样调用的时候可能会导致数据的延迟滞后的问题，则会出现bug。</p>
+<p>解决方法则是推荐采取<strong>异步回调</strong>的方法，然后传参进去，严格遵守vue的生命周期就可以解决 推荐 es6 的promise。</p>
+<p>示例代码：</p>
+<p>handleAsync () {</p>
+<p>  return new Promise(resolve=&gt;{</p>
+<p>​    const res=””;</p>
+<p>​    resolve(res)</p>
+<p>})</p>
+<p>}</p>
+<p>…</p>
+<p>async handleShow() {</p>
+<p>  await this.handleAsync().then(res=&gt;{</p>
+<p>  this.$refs.child.show(res);</p>
+<p>})</p>
+<p>}</p>
+<p>…</p>
+<p><strong>五、总结</strong></p>
+<p>  vue 的生命周期，总得来说就是实例的创建和销毁这段时间的一个机制吧。也是vue框架的数据间的交互通信。其实现在看来也没那么难，但是vue的源码实现这一套机制那是难得一逼，涉及到复杂的算法如<strong>diff算法</strong>，有兴趣的童鞋可以去深入了解一下。喜欢的童鞋点个赞 啊哈哈，又来骗赞啦</p>
+<p>作者：CalvinXie<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/410b6099be69">https://www.jianshu.com/p/410b6099be69</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuunawl.github.io/2020/09/08/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" data-id="ckf0nzwdv0000jku30lrfa1ha" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js基础-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/23/js%E5%9F%BA%E7%A1%80-1/" class="article-date">
+  <time datetime="2020-08-23T01:13:35.000Z" itemprop="datePublished">2020-08-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/23/js%E5%9F%BA%E7%A1%80-1/">js基础(二)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><p>对象是某个引用类型的实例，新对象是使用<code>new</code>操作符后跟一个构造函数来创建的。构造函数本身是一个函数，只不过该函数是为创建对象的目的而定义的。</p>
+<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><p>大多数引用类型值都是Object类型的实例</p>
+<p><strong>创建：</strong></p>
+<ul>
+<li>new操作符</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person.name=<span class="string">&quot;ly&quot;</span>;</span><br><span class="line">person.age=<span class="number">22</span>;</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对象字面量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;</span><br><span class="line">    name:<span class="string">&quot;ly&quot;</span>,</span><br><span class="line">    age:<span class="number">22</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<p>在适用对象字面量时，属性名也可以使用字符串（用引号包起来）。<br>也可以使用空花括号：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;&#125;；</span><br><span class="line">person.name=<span class="string">&quot;ly&quot;</span>;</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>一般来说，访问对象属性时使用的都是点表示法，不过也可以使用方括号表示法来访问对象的属性。在使用方括号语法时，应该讲要访问的属性以字符串的形式放在方括号中，例如 ：<code>person[&quot;name&quot;]</code>。<br>从功能上看，这两种访问方式没有任何区别，但方括号的优点是可以通过变量来访问属性：<code>var key=&quot;name&quot;; person[key]&quot;</code>。<br>如果属性名中包含会导致语法错误的字符，或者属性名使用的是关键字，也可以使用方括号：<code>person[&quot;first name&quot;]</code></p>
+<h3 id="Array类型"><a href="#Array类型" class="headerlink" title="Array类型"></a>Array类型</h3><p>数组是一个按顺序排列的集合，集合的每个值称为元素。JavaScript的数组可以包括任意的数据类型。数组用<code>[]</code>表示，元素之间用<code>,</code>分隔，并且ECMAScript数组的大小是可以动态调整的，即可以随着数据的添加自动增长。</p>
+<p><strong>创建：</strong><br>有两种基本方式：</p>
+<ul>
+<li>使用Array构造函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result=<span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//创建了一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);<span class="comment">//创建了数组[1,2,3]</span></span><br><span class="line"><span class="keyword">var</span> colors=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">20</span>);<span class="comment">//创建了一个长度为20的数组</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以省略<code>new</code>，结果相同：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result=<span class="built_in">Array</span>();<span class="comment">//创建了一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr=<span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);<span class="comment">//创建了数组[1,2,3]</span></span><br><span class="line"><span class="keyword">var</span> colors=<span class="built_in">Array</span>(<span class="number">20</span>);<span class="comment">//创建了一个长度为20的数组</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字面量<br>数组的字面量有一对包含数组项的方括号表示，多个项数之间由<code>,</code>隔开</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result=[];<span class="comment">//创建了一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];<span class="comment">//创建了数组[1,2,3]</span></span><br><span class="line"><span class="keyword">var</span> color=[<span class="number">2</span>,<span class="number">3</span>,];<span class="comment">//最好不要这样写，因为这样可能会创建一个2项或3项的数组</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p>在例子的第三个中，在IE8及之前的版本中，color会是一个2，3，undefined的数组，在其他浏览器中，color是一个包含2项的数组。</p>
+<p>数组的元素可以通过索引来访问和设置。注意，索引的开始值为0。</p>
+<p><strong>检测数组</strong><br>判断某个对象是不是数组。</p>
+<ul>
+<li>instanceof<br>对于一个网页，过着一个全局作用域而言，使用instanceof操作符就可以得到结果：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(value <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p>但他的问题在于，他假定只有一个全局执行环境。如果网页包含多个框架，那实际上就有多个不同的全局执行环境从而存在多个版本的Array构造函数，如果从一个框架向另一个框架传入一个数组，那么传入的数组与第二个框架中原生创建的数组分别具有和各自的不同的构造函数。<br>为解决这个问题，ECMAScript 5新增了Array.isArray()方法。</p>
+<ul>
+<li>Array.isArray()<br>确定某个值到底是不是数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Array</span>.isArray(value)&#123;</span><br><span class="line"><span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42853241/article/details/93141194"><strong>数组的方法</strong>(可点击）</a></p>
+<h3 id="Date类型"><a href="#Date类型" class="headerlink" title="Date类型"></a>Date类型</h3><p>Date类型使用字UTC（国际协调时间）1970年1月1日午夜（零时）开始经过的毫秒数来保存日期。在使用这种数据存储格式的条件下，Date类型保存的日期能够准确精确到1970年1月1日之前或之后的100 000 000年。</p>
+<p><strong>创建：</strong><br>使用new操作符和Date构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>在不传参的情况下，new Date()自动获取当前的日期和时间。<br>如果想要根据特定的日期和时间创建日期对象，必须传入便是该日期的毫秒数（即从1970年1月1日午夜起至该日期止经过的毫秒数。</p>
+<blockquote>
+<p>ECMAScript提供了两个方法获得毫秒数：Date.parse()，Date.UTC()<br>Date.parse()：传入日期的字符串参数得到毫秒数<br>Date.UTC()：参数是年份、月份（基于0）、月中的天数、小时数、分钟、秒及毫秒（前两项必需）<br>var date1=new Date(Date.parse(“2005,1,1”));<br>var date2=new Date(Date.UTC(2005,0,1));<br>这两个方法等价于new Date(“2005,1,1”);<br>new Date(2005,0,1);<br>他们虽然省略了方法的调用，但是执行时会在后台调用方法。</p>
+</blockquote>
+<p>Date.now()：返回表示调用这个方法时的日期和时间的毫秒数</p>
+<p><strong>方法：</strong></p>
+<ul>
+<li>toLocaleString()：按照与浏览器设置的地区相适应的格式返回日期和时间，应该会包括AM、PM（不包含时区信息）</li>
+<li>toString()：返回带有时区信息的日期和时间</li>
+<li>valueOf()：返回日期的毫秒表示</li>
+<li>toDateString()：以特定于实现的格式显示星期几、月、日和年</li>
+<li>toTimeString()：以特定于实现的格式显示时、分、秒和时区</li>
+<li>toLocaleDateString()：以特定于地区的格式显示星期几、月、日和年</li>
+<li>toLocaleTimeString()：以特定于实现的格式显示时、分、秒</li>
+<li>toUTCString()：以特定于实现的格式完整的UTC日期</li>
+</ul>
+<blockquote>
+<p>以上方法因浏览器而异</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="built_in">console</span>.log(date.toLocaleString());</span><br><span class="line">    <span class="built_in">console</span>.log(date.toString());</span><br><span class="line">    <span class="built_in">console</span>.log(date.valueOf());</span><br><span class="line">    <span class="built_in">console</span>.log(date.toDateString());</span><br><span class="line">    <span class="built_in">console</span>.log(date.toTimeString());</span><br><span class="line">    <span class="built_in">console</span>.log(date.toLocaleDateString());</span><br><span class="line">    <span class="built_in">console</span>.log(date.toLocaleTimeString());</span><br><span class="line">    <span class="built_in">console</span>.log(date.toUTCString());</span><br><span class="line"><span class="number">123456789</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20191106184159174.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191106185024669.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODUzMjQx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>除此以外还有很多方法：<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/jsref/jsref_obj_date.asp">点击</a></p>
+<blockquote>
+<p>var n=+new Date()也可以得到毫秒值</p>
+</blockquote>
+<h3 id="RegExp类型"><a href="#RegExp类型" class="headerlink" title="RegExp类型"></a>RegExp类型</h3><p>ECMAScript通过RegExp类型来支持正则表达式。</p>
+<p><strong>①创建：</strong></p>
+<ul>
+<li>字面量创建</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> expression = <span class="regexp">/ pattern /</span> flags ;</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>其中的pattern部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用。<br>每个正则表达式都带有一个或多个标志位flags，用以标明正则表达式的行为。</p>
+<p><strong>标志：</strong></p>
+<ul>
+<li>g：表示全局模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止</li>
+<li>i：表示不区分大小写模式</li>
+<li>m：表示多行模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> reg=<span class="regexp">/at/g</span>;   <span class="comment">//全局匹配at</span></span><br><span class="line">    <span class="keyword">var</span> reg2=<span class="regexp">/[bc]at/i</span>;  <span class="comment">//匹配第一个bat或cat，不区分大小写</span></span><br><span class="line">    <span class="keyword">var</span> reg3=<span class="regexp">/.at/gi</span>;    <span class="comment">//匹配所有以at结尾的3个字符的组合，不区分大小写</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>正则表达式的元字符</strong>：<code>( [ &#123; \ ^ $ | ) ? * + . ] &#125;</code>，如果想要匹配的字符串中包含这些字符，就必须对他们进行转义</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> reg1=<span class="regexp">/[bc]at/i</span>;   <span class="comment">//匹配第一个bat或cat，不区分大小写</span></span><br><span class="line">    <span class="keyword">var</span> reg2=<span class="regexp">/\[bc\]at/i</span>;<span class="comment">//匹配第一个[bc]at，不区分大小写</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>构造函数创建<br>接收两个参数，一个是要匹配的字符串模式，一个是可选的标志字符串</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;[bc]at&quot;</span>,<span class="string">&quot;i&quot;</span>);</span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line"><span class="keyword">var</span> reg1=<span class="regexp">/[bc]at/i</span>;   </span><br><span class="line"><span class="comment">//匹配第一个bat或cat，不区分大小写</span></span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是：在构造函数创建的方法中，参数是字符串，所以元字符要双重转义</p>
+<p>使用正则表达式字面量和使用RegExp构造函数创建的正则表达式不一样。在ECMAScript 3 中，正则表达式字面量始终会共享同一个RegExp实例，而使用构造函数创建的每一个新RegExp实例都是一个新实例。ECMAScript 5规定，使用字面量要和构造函数一样，每次都创建新的实例。</p>
+<p><strong>②实例属性</strong></p>
+<ul>
+<li>global：布尔值，表示是否设置了g标志</li>
+<li>ignoreCase：布尔值，表示是否设置了i标志</li>
+<li>lastIndex：整数，表示开始搜索下一个匹配项的字符位置，从0算起</li>
+<li>multiline：布尔值，表示是否设置了m标志</li>
+<li>source：正则表达式的字符串表示，按照字面量形式而非传入构造函数中的字符串模式返回</li>
+</ul>
+<p><strong>③实例方法</strong></p>
+<ul>
+<li>exec()<br>专门为捕获组而设计的。接收一个参数，即要应用模式的字符串，然后返回包含第一个匹配项的信息的数组；或者在没有匹配项的情况下返回null。<br>返回的数组虽然是Array的实例，但包含两个额外的属性：index,input<br>index表示匹配项在字符串中的位置；input表示应用正则表达式的字符串。<br>在数组中，第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串（如果没有捕获组，则该数组只包含一项）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test=<span class="string">&quot;mom and dad and baby&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/mom( and dad( and baby)?)?/gi</span>;</span><br><span class="line"><span class="keyword">var</span> matches=reg.exec(test);</span><br><span class="line"><span class="built_in">console</span>.log(matches.index); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(matches.input);<span class="comment">//&quot;mom and dad and baby&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(matches[<span class="number">0</span>]);   <span class="comment">//&quot;mom and dad and baby&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(matches[<span class="number">1</span>]);   <span class="comment">//&quot; and dad and baby&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(matches[<span class="number">2</span>]);   <span class="comment">//&quot; and baby&quot;</span></span><br><span class="line"><span class="number">12345678</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>test()<br>目标字符串与某个模式是否匹配。返回结果为boolean值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text=<span class="string">&quot;000-00-0000&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/\d&#123;3&#125;-\d&#123;2&#125;-\d&#123;4&#125;/</span>;</span><br><span class="line"><span class="keyword">if</span>(reg.test(text))&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>toString()、toLocaleString()<br>返回正则表达式的字面量</li>
+<li>valueOf()<br>返回正则表达式本身</li>
+</ul>
+<h3 id="Function类型"><a href="#Function类型" class="headerlink" title="Function类型"></a>Function类型</h3><p>函数实际上是对象。可以封装一段特定功能的代码。每个函数都是Function类型的实例，具有属性和方法。函数名是一个指向函数对象的指针。</p>
+<p>函数名仅仅是只想函数对象的指针，因此函数名和包含对象指针的其他变量没有什么不同，所以，一个函数可以有多个名字。</p>
+<p><strong>①创建</strong></p>
+<ul>
+<li>函数声明</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数表达式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>构造函数<br>可以传入多个参数，但最后一个参数会作为函数体。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum =<span class="keyword">new</span> <span class="built_in">Function</span> (<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;return a+b&quot;</span>);</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>②没有重载</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+<span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+<span class="number">200</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result=sum(<span class="number">100</span>);<span class="comment">//300</span></span><br><span class="line"><span class="number">1234567</span></span><br></pre></td></tr></table></figure>
+
+<p>后面的函数覆盖了前面的函数</p>
+<p><strong>②函数声明和函数表达式</strong></p>
+<p>解析器在向执行环境中加载数据时，会率先读取函数声明，并使其在任何代码之前可用（可以访问）；而函数表达式，则必须等到解析器执行到他所在的代码行，才会真正被解释执行。也就是说，函数声明存在函数声明提升问题。</p>
+<p><strong>③作为值的函数</strong><br>可以传参，可以返回</p>
+<p>示例：斐波那契数列<br>函数作为返回值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getFib</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n===<span class="number">1</span>||n===<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> getFib(n<span class="number">-1</span>)+getFib(n<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(getFib(<span class="number">7</span>));</span><br><span class="line"><span class="number">1234567</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：sort()比较<br>函数作为参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">         <span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (value1 &lt; value2) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> arr = [<span class="number">13</span>, <span class="number">24</span>, <span class="number">51</span>, <span class="number">3</span>];</span><br><span class="line">        <span class="built_in">console</span>.log(arr.sort(compare)); <span class="comment">// [3, 13, 24, 51]</span></span><br><span class="line"><span class="number">1234567891011</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>④函数内部属性</strong></p>
+<ul>
+<li>arguments<br>类数组对象，包含着传入函数中的所有参数。（获取实参）<br>这个对象有一个callee属性：该属性是一个指针，指向拥有这个arguments对象的函数。<br>示例：阶乘函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getF</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n*getF(n<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(getF(<span class="number">7</span>));</span><br><span class="line"><span class="number">1234567</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码，这个函数的执行与函数名紧紧的绑在一起。为了解决这个问题，可以使用callee</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getF</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n*<span class="built_in">arguments</span>.callee(n<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(getF(<span class="number">7</span>));</span><br><span class="line"><span class="number">1234567</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>this<br>引用的是函数执行的环境对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color=<span class="string">&quot;red&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> o=&#123;<span class="attr">color</span>:<span class="string">&quot;blue&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">col</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.color;</span><br><span class="line">&#125;</span><br><span class="line">col();    <span class="comment">//&quot;red&quot;,此时的this是window</span></span><br><span class="line">o.col=col;</span><br><span class="line">o.col();  <span class="comment">//&quot;blue&quot;，此时的this是o对象</span></span><br><span class="line"><span class="number">123456789</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>caller<br>调用当前函数的引用，如果是在全局作用域中调用当前函数，它的值为null</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    inner();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(inner.caller);  <span class="comment">//指向outer()</span></span><br><span class="line">&#125;</span><br><span class="line">outer();   </span><br><span class="line"><span class="number">1234567</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>⑤函数属性和方法</strong></p>
+<ul>
+<li>属性</li>
+</ul>
+<ol>
+<li>length：表示函数希望接收的命名参数的个数</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum.length);   <span class="comment">//2</span></span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>prototype：保存引用类型所有实例方法的真正所在。在ECMAScript 5中，prototype属性是不可枚举的。</li>
+</ol>
+<ul>
+<li>方法<br>每个函数都有两个非继承而来的方法：call()、apply()。这两个方法的作用都是在特定过的作用域中调用函数，实际上等于设置函数体内的this。</li>
+</ul>
+<ol>
+<li>apply()：接收两个参数，一个是在其中运行函数的作用域，另一个是参数数组，第二个参数可以是Array实例，也可以是arguments对象。</li>
+<li>call()：和apply()的作用相同，区别在于接收参数的方式不同。对于call()而言，第一个参数是this值没有变化，变化的是其余参数都直接传递给函数。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum.apply(<span class="built_in">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">    <span class="comment">//等价</span></span><br><span class="line">    <span class="comment">//return sum.apply(this,[a,b]);</span></span><br><span class="line">    <span class="comment">//return sum.call(this,a,b);</span></span><br><span class="line">&#125;</span><br><span class="line">alert(callSum(<span class="number">10</span>,<span class="number">10</span>);</span><br><span class="line"><span class="number">12345678910</span></span><br></pre></td></tr></table></figure>
+
+<p>call、apply真正强大的地方是能够扩充函数赖以运行的作用域。看以下示例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color=<span class="string">&quot;red&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> o=&#123;<span class="attr">color</span>:<span class="string">&quot;blue&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">col</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.color;</span><br><span class="line">&#125;</span><br><span class="line">col();    <span class="comment">//&quot;red&quot;</span></span><br><span class="line">col.call(<span class="built_in">this</span>);   <span class="comment">//&quot;red&quot;</span></span><br><span class="line">col.call(<span class="built_in">window</span>);  <span class="comment">//&quot;red&quot;</span></span><br><span class="line">col.call(o);    <span class="comment">//&quot;blue&quot;</span></span><br><span class="line"><span class="number">12345678910</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>bind()：ECMAScript 5还定义了一个方法bind()。这个方法会创建一个函数的实例，其this值会绑定到传给bind函数的值</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color=<span class="string">&quot;red&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> o=&#123;<span class="attr">color</span>:<span class="string">&quot;blue&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">col</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn=col.bind(o);    </span><br><span class="line">fn();     <span class="comment">//&quot;blue&quot;</span></span><br><span class="line"><span class="number">12345678</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>每个函数继承的toString()、toLocaleString()和valueOf()方法始终返回函数的代码，其结果因浏览器而异</li>
+</ol>
+<h3 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h3><p>ECMAScript提供了3个特殊的引用类型：Boolean、String、Number。他们与引用类型相似，但也具有各自的特殊行为。</p>
+<p>实际上，每当读取到一个基本类型的时候，后台就会创建一个对应的基本包装类型的对象，从而让我们能够调用方法操作这些数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;ly is an apple&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> s1=str.substring(<span class="number">2</span>);</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>当第二行代码访问str时，访问过程处于一种读取模式，而在读取模式中访问字符串时，后台都会自动完成下列处理：<br>1.创建String类型的一个实例<br>2.在实例上调用指定方法<br>3.销毁这个实例</p>
+<p>引用类型和基本包装类型的区别：对象的生存周期。使用new操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后立即被销毁。这意味着我们不能在运行时给类型值添加属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;some string&quot;</span>;</span><br><span class="line">str.color=<span class="string">&quot;red&quot;</span>;</span><br><span class="line">alert(str.color); <span class="comment">//undefined</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p>对基本包装类型的实例调用 typeof会返回<code>&quot;object&quot;</code>，而且所有的基本包装类型对象在转换为布尔类型的值都为<code>true</code>。</p>
+<p><strong>①Boolean类型</strong><br>Boolean类型是与布尔值对应的引用类型。</p>
+<p>创建：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>valueOf()：返回基本类型值true或false<br>toString()：返回字符串”true”或”false”</p>
+<p>要注意的是在布尔表达式中使用Boolean对象<br>布尔表达式中的所有对象都会被转换为true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fobj=<span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="keyword">var</span> result=fobj&amp;&amp;<span class="literal">true</span>;</span><br><span class="line">alert(result);   <span class="comment">//true</span></span><br><span class="line"><span class="number">123</span></span><br><span class="line">alert(<span class="keyword">typeof</span> fobj);    <span class="comment">//object</span></span><br><span class="line">alert(<span class="keyword">typeof</span> <span class="literal">false</span>);    <span class="comment">//boolean</span></span><br><span class="line">alert(fobj <span class="keyword">instanceof</span> <span class="built_in">Boolean</span>);  <span class="comment">//true</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>②Number类型</strong>、</p>
+<p>Number类型是与数字值对应的引用类型。</p>
+<p>创建：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">10</span>);</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>valueOf()：返回对象表示的基本类型的值<br>toString()、toLocaleString()：返回字符串形式的数值，toString()可以传参表示进制</p>
+<p>方法：</p>
+<ul>
+<li>toFixed()：按照指定的小数位返回数值的字符串格式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">10</span>;</span><br><span class="line">alert(num.toFixed(<span class="number">2</span>));    <span class="comment">//&quot;10.00&quot;</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>toExponential()：返回以指数表示法表示的数值的字符串格式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">10</span>;</span><br><span class="line">alert(num.toExponential(<span class="number">1</span>));   <span class="comment">//&quot;1.0e+1&quot;</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>toPrecision()：返回某个数值的最合适的格式。可能返回固定大小格式，也可能返回指数格式。接收一个参数，表示所有数字的位数，不包括指数部分</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num=<span class="number">99</span>;</span><br><span class="line">alert(num.toPrecision(<span class="number">1</span>));   <span class="comment">//&quot;1e+2&quot;</span></span><br><span class="line">alert(num.toPrecision(<span class="number">2</span>));   <span class="comment">//&quot;99&quot;</span></span><br><span class="line">alert(num.toPrecision(<span class="number">3</span>));    <span class="comment">//&quot;99.0&quot;</span></span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上，toPrecision()会根据要处理的数值决定到底是调用toFixed()还是toExponential()。</p>
+<p><strong>③String类型</strong></p>
+<p>String类型是与字符串对应的引用类型。</p>
+<p>创建：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>valueOf()、toString()、toLocaleString()：返回对象表示的基本字符串值</p>
+<ul>
+<li>length：String类型的每个实例都有一个length属性，表示字符串中包含多少个字符</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">alert(str.length);   <span class="comment">//11</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42853241/article/details/93517898"><strong>字符串的方法</strong>（可点击）</a></p>
+<h3 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h3><p>ECMA-262对内置对象的定义是：由ECMAScript实现提供的、不依赖于宿主环境的对象，这些对象在ECMAScript程序执行之前就已经存在了。</p>
+<p>内置对象：Object、Array、String、Global、Math、Date等等…</p>
+<p><strong>①Global对象</strong></p>
+<p>不属于任何其他对象的属性和方法，最终都是他的属性和方法。事实上，没有全局变量和全局函数；所有在全局作用域中定义的属性和函数，都是Global对象的属性。</p>
+<p>之前学习的isNaN()、parseInt()等等，都是Global对象的方法，除此之外，还有一些其他的方法：</p>
+<ul>
+<li>URI编码方法</li>
+</ul>
+<ol>
+<li>encodeURI()、encodeURIComponent()<br>可以对URI进行编码，利用特殊的UTF-8编码代替所有无效的字符（有效的URI中不能包含某些字符，例如空格）。<br><code>encodeURI()</code>主要对于整个URI；<code>encodeURIComponent()</code>主要用于对URI中的某一段进行编码。它们的区别主要在于encodeURI不会对本身属于URI的特殊字符进行编码，例如冒号、正斜杠、问好和井号；而encodeURIComponent()则会对他发现的任何特殊字符进行编码。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uri=<span class="string">&quot;https://blog.csdn.net/qq_42853241/article/details/85068177&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">encodeURI</span>(uri));</span><br><span class="line"><span class="comment">//&quot;https://blog.csdn.net/qq_42853241/article/details/85068177&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">encodeURIComponent</span>(uri));</span><br><span class="line"><span class="comment">//&quot;https%3A%2F%2Fblog.csdn.net%2Fqq_42853241%2Farticle%2Fdetails%2F85068177&quot;</span></span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>decodeURI()、decodeURIComponent()<br>与上面两个方法对应。decodeURI()只能对使用encodeURI()替换的字符进行解码；decodeURIComponent()能够解码使用encodeURIComponent()编码的所有字符</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uri=<span class="string">&quot;http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">decodeURI</span>(uri));</span><br><span class="line"><span class="comment">//&quot;http%3A%2F%2Fwww.wrox.com%2Fillegal value.htm%23start&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">decodeURIComponent</span>(uri));</span><br><span class="line"><span class="comment">//&quot;http://www.wrox.com/illegal value.htm#start&quot;</span></span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>URI方法用于替代已经被ECMA-262第3版废弃的escape()和unescape()方法<br>URI方法可以编码所有的Unicode字符，而原来的方法只能编码ASCII字符</p>
+</blockquote>
+<ul>
+<li>eval()<br>eval()方法就像是一个完整的ECMAScript解析器，只接受一个参数，即要执行的ECMAScript字符串</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(<span class="string">&quot;alert(&#x27;hi&#x27;)&quot;</span>);</span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line">alert(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p>eval()将传入的参数当作实际的ECMAScript语句来解析，然后把执行结果插入到原位置。<br>通过eval()执行的代码被认为是包含该次调用的执行环境的一部分，因此被执行的代码具有与该执行环境相同的作用域链。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg=<span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&quot;alert(msg)&quot;</span>);  <span class="comment">//&quot;hello world&quot;</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>同样的，我们可以在eval()中定义一个函数或者变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(<span class="string">&quot;function sayHi()&#123;</span></span><br><span class="line"><span class="string">    alert(&#x27;hi&#x27;);</span></span><br><span class="line"><span class="string">&#125;&quot;</span>);</span><br><span class="line">sayHi(); <span class="comment">//&#x27;hi&#x27;</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&quot;var msg=&#x27;hello world&#x27;;&quot;</span>);</span><br><span class="line">alert(msg);  <span class="comment">//&#x27;hello world&#x27;</span></span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
+
+<p>在eval()中创建的任何变量或函数都不会被提升，因为在解析代码的时候，他们被包含在一个字符串中，只在eval()被执行的时候创建.<br>严格模式下，在外部访问不到eval()中创建的任何变量或函数，因此，前面的一个例子在严格模式下会导致错误。<br>严格模式下，为eval赋值也会导致错误<code>&quot;use strict&quot;; eval=&#39;hi&#39;;</code>报错</p>
+<ul>
+<li>Global对象的属性<br>Global对象还包含一些属性：undefined、NaN、Infinity都是Global对象的属性，此外，所有的原生引用类型的构造函数，像Object和Function，也都是Global对象的属性</li>
+<li>window对象<br>ECMAScript没有指出如何直接访问Global对象，但Web浏览器都是将这个全局对象作为window对象的一部分加以实现的。因此，在全局作用域中声明的所有变量和函数，就都成为window对象的属性。<br>另一种取得Global对象的方法是使用以下代码</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">global</span>=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>②    Math对象</strong></p>
+<p>Math——为保存数学公式和信息提供的公共位置。</p>
+<p>与我们在JS直接编写的计算功能相比，Math对象提供的计算功能执行起来要快的多。</p>
+<ul>
+<li>Math对象的属性<br>语法：Math.***，例如：Math.E<br><img src="https://img-blog.csdnimg.cn/2019112116092630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyODUzMjQx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>min()、max()<br>用于确定一组数值中的最大值和最小值，可以接受任意多个数值参数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> min=<span class="built_in">Math</span>.min(<span class="number">3</span>,<span class="number">54</span>,<span class="number">32</span>,<span class="number">16</span>);</span><br><span class="line"><span class="built_in">console</span>.log(min);<span class="comment">//3</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>要找到数组中的最大或最小值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">44</span>,<span class="number">23</span>,<span class="number">87</span>,<span class="number">14</span>,<span class="number">87</span>];</span><br><span class="line">    <span class="keyword">var</span> result=<span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>,arr);</span><br><span class="line">    <span class="built_in">console</span>.log(result);<span class="comment">//87</span></span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>舍入方法<br><code>floor()</code>、<code>ceil()</code>、<code>round()</code><br>Math.ceil()：向上舍入<br>Math.floor()：向下舍入<br>Math.round()：四舍五入</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil(<span class="number">25.1</span>));  <span class="comment">//26</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil(<span class="number">25.6</span>));  <span class="comment">//26</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil(<span class="number">25.9</span>));  <span class="comment">//26</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(<span class="number">25.1</span>));  <span class="comment">//25</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(<span class="number">25.6</span>));  <span class="comment">//25</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(<span class="number">25.9</span>));  <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.round(<span class="number">25.1</span>));  <span class="comment">//25</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.round(<span class="number">25.5</span>));  <span class="comment">//26</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.round(<span class="number">25.9</span>));  <span class="comment">//26</span></span><br><span class="line"><span class="number">1234567891011</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>random()<br>返回大于等于0小于1的一个随机数（返回的是小数值）<br>语法：<code>值=Math.floor(Math.random()*可能值的总数+第一个可能的值)</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="number">-10</span>中的随机整数</span><br><span class="line"><span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">2</span><span class="number">-10</span>中的一个随机整数</span><br><span class="line"><span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">9</span>+<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuunawl.github.io/2020/08/23/js%E5%9F%BA%E7%A1%80-1/" data-id="ckes3psvm0000i0u3g5rj0ff1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-前后端分离" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/23/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/" class="article-date">
@@ -122,7 +674,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h3><p>   <strong>JavaScript</strong>是一种<strong>解释型脚本语言</strong>，目的是能够在客户端的网页中增加<strong>动态效果</strong>和<strong>交互能力</strong>，实现了用户与网页之间的一种实时的、动态的交互关系。<br>   它最初是由网景公司设计的，起名为LiveScript，后来Java语言非常红火，网景公司希望借助Java的名气来推广，改名为JavaScript，但是除了语法有点相似，在其他部分基本上没啥关系。<br>   后来，JavaScript被Netscape公司交给ECMA制定标准，成为<strong>ECMAScript</strong>，最新版ECMAScript6（简称ES6）已经在2015年6月正式发布了。</p>
+        <p><a target="_blank" rel="noopener" href="https://wl2282589971.github.io/2020/08/22/js%E5%9F%BA%E7%A1%80/">js基础(一)</a></p>
+<h3 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h3><p>   <strong>JavaScript</strong>是一种<strong>解释型脚本语言</strong>，目的是能够在客户端的网页中增加<strong>动态效果</strong>和<strong>交互能力</strong>，实现了用户与网页之间的一种实时的、动态的交互关系。<br>   它最初是由网景公司设计的，起名为LiveScript，后来Java语言非常红火，网景公司希望借助Java的名气来推广，改名为JavaScript，但是除了语法有点相似，在其他部分基本上没啥关系。<br>   后来，JavaScript被Netscape公司交给ECMA制定标准，成为<strong>ECMAScript</strong>，最新版ECMAScript6（简称ES6）已经在2015年6月正式发布了。</p>
 <h3 id="JS组成"><a href="#JS组成" class="headerlink" title="JS组成"></a>JS组成</h3><ul>
 <li>JS组成：ECMAScript（JS的核心）、DOM（文档对象模型）、BOM（浏览器对象模型）<br>+ ECMAScript：主要定义了JS的语法<br>+ DOM：一套操作页面元素的API，DOM可以把HTML看做是文档树，通过DOM提供的API可以对树上的节点进行操作<br>+ BOM：一套操作浏览器功能的API，通过BOM可以操作浏览器窗口</li>
 </ul>
@@ -683,7 +1236,7 @@ object =&gt;调用valueOf()，然后依照前面规则转换。如果结果为Na
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
     </div>
   </div>
 
@@ -696,23 +1249,23 @@ object =&gt;调用valueOf()，然后依照前面规则转换。如果结果为Na
       <ul>
         
           <li>
+            <a href="/2020/09/19/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E8%8E%B7%E5%8F%96%E6%AF%8F%E4%B8%80%E4%BD%8D/">二进制数获取每一位</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/12/%E5%B0%8F%E5%AD%A6%E6%9C%9F01/">小学期01</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/08/Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Vue的生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/23/js%E5%9F%BA%E7%A1%80-1/">js基础(二)</a>
+          </li>
+        
+          <li>
             <a href="/2020/08/23/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/js%E5%9F%BA%E7%A1%80/">js基础(一)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BAblog/">使用hexo搭建blog</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/21/js/">js</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/21/hello-world/">Hello World</a>
           </li>
         
       </ul>
