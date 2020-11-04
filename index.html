@@ -64,6 +64,223 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-数据可视化入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/06/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E5%85%A5%E9%97%A8/" class="article-date">
+  <time datetime="2020-10-06T08:19:07.000Z" itemprop="datePublished">2020-10-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/06/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E5%85%A5%E9%97%A8/">数据可视化入门01</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="切片函数"><a href="#切片函数" class="headerlink" title="切片函数"></a>切片函数</h5><p>python的数组索引方法</p>
+<p>A[x:y:z]</p>
+<ul>
+<li>x代表索引的开始地址，可以为负数，代表倒数第几个数，默认为0</li>
+<li>y代表到哪个索引 为止，同样可以为负数，默认为0</li>
+<li>z代表每个几个元素选取，默认为1</li>
+</ul>
+<h5 id="numpy对象"><a href="#numpy对象" class="headerlink" title="numpy对象"></a>numpy对象</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.array(object, dtype &#x3D; None, copy &#x3D; True, order &#x3D; None, subok &#x3D; False, ndmin &#x3D; 0)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">object</td>
+<td align="left">数组或嵌套的数列</td>
+</tr>
+<tr>
+<td align="left">dtype</td>
+<td align="left">数组元素的数据类型，可选</td>
+</tr>
+<tr>
+<td align="left">copy</td>
+<td align="left">对象是否需要复制，可选</td>
+</tr>
+<tr>
+<td align="left">order</td>
+<td align="left">创建数组的样式，C为行方向，F为列方向，A为任意方向（默认）</td>
+</tr>
+<tr>
+<td align="left">subok</td>
+<td align="left">默认返回一个与基类类型一致的数组</td>
+</tr>
+<tr>
+<td align="left">ndmin</td>
+<td align="left">指定生成数组的最小维度</td>
+</tr>
+</tbody></table>
+<h5 id="dtype"><a href="#dtype" class="headerlink" title="dtype"></a>dtype</h5><ul>
+<li>基本数据类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bool_</td>
+<td align="left">布尔型数据类型（True 或者 False）</td>
+</tr>
+<tr>
+<td align="left">int_</td>
+<td align="left">默认的整数类型（类似于 C 语言中的 long，int32 或 int64）</td>
+</tr>
+<tr>
+<td align="left">intc</td>
+<td align="left">与 C 的 int 类型一样，一般是 int32 或 int 64</td>
+</tr>
+<tr>
+<td align="left">intp</td>
+<td align="left">用于索引的整数类型（类似于 C 的 ssize_t，一般情况下仍然是 int32 或 int64）</td>
+</tr>
+<tr>
+<td align="left">int8</td>
+<td align="left">字节（-128 to 127）</td>
+</tr>
+<tr>
+<td align="left">int16</td>
+<td align="left">整数（-32768 to 32767）</td>
+</tr>
+<tr>
+<td align="left">int32</td>
+<td align="left">整数（-2147483648 to 2147483647）</td>
+</tr>
+<tr>
+<td align="left">int64</td>
+<td align="left">整数（-9223372036854775808 to 9223372036854775807）</td>
+</tr>
+<tr>
+<td align="left">uint8</td>
+<td align="left">无符号整数（0 to 255）</td>
+</tr>
+<tr>
+<td align="left">uint16</td>
+<td align="left">无符号整数（0 to 65535）</td>
+</tr>
+<tr>
+<td align="left">uint32</td>
+<td align="left">无符号整数（0 to 4294967295）</td>
+</tr>
+<tr>
+<td align="left">uint64</td>
+<td align="left">无符号整数（0 to 18446744073709551615）</td>
+</tr>
+<tr>
+<td align="left">float_</td>
+<td align="left">float64 类型的简写</td>
+</tr>
+<tr>
+<td align="left">float16</td>
+<td align="left">半精度浮点数，包括：1 个符号位，5 个指数位，10 个尾数位</td>
+</tr>
+<tr>
+<td align="left">float32</td>
+<td align="left">单精度浮点数，包括：1 个符号位，8 个指数位，23 个尾数位</td>
+</tr>
+<tr>
+<td align="left">float64</td>
+<td align="left">双精度浮点数，包括：1 个符号位，11 个指数位，52 个尾数位</td>
+</tr>
+<tr>
+<td align="left">complex_</td>
+<td align="left">complex128 类型的简写，即 128 位复数</td>
+</tr>
+<tr>
+<td align="left">complex64</td>
+<td align="left">复数，表示双 32 位浮点数（实数部分和虚数部分）</td>
+</tr>
+<tr>
+<td align="left">complex128</td>
+<td align="left">复数，表示双 64 位浮点数（实数部分和虚数部分）</td>
+</tr>
+</tbody></table>
+<p>numpy 的数值类型实际上是 dtype 对象的实例，并对应唯一的字符，包括 np.bool_，np.int32，np.float32，等等。</p>
+<p>可以用简写表示，例如‘s20’表示20位字符串，’i4’表示int32</p>
+<ul>
+<li><p>结构化化数据类型</p>
+<p>数据类型对象是用来描述与数组对应的内存区域如何使用，这依赖如下几个方面：</p>
+<ul>
+<li>数据的类型（整数，浮点数或者 Python 对象）</li>
+<li>数据的大小（例如， 整数使用多少个字节存储）</li>
+<li>数据的字节顺序（小端法或大端法）</li>
+<li>在结构化类型的情况下，字段的名称、每个字段的数据类型和每个字段所取的内存块的部分</li>
+<li>如果数据类型是子数组，它的形状和数据类型</li>
+</ul>
+<p>字节顺序是通过对数据类型预先设定”&lt;”或”&gt;”来决定的。”&lt;”意味着小端法(最小值存储在最小的地址，即低位组放在最前面)。”&gt;”意味着大端法(最重要的字节存储在最小的地址，即高位组放在最前面)。</p>
+<p>dtype 对象是使用以下语法构造的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.dtype(object, align, copy)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>object - 要转换为的数据类型对象</li>
+<li>align - 如果为 true，填充字段使其类似 C 的结构体。</li>
+<li>copy - 复制 dtype 对象 ，如果为 false，则是对内置数据类型对象的引用</li>
+</ul>
+</li>
+</ul>
+<h5 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h5><h3 id="numpy-empty"><a href="#numpy-empty" class="headerlink" title="numpy.empty"></a>numpy.empty</h3><p>numpy.empty 方法用来创建一个指定形状（shape）、数据类型（dtype）且未初始化的数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.empty(shape, dtype &#x3D; float, order &#x3D; &#39;C&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">shape</td>
+<td align="left">数组形状</td>
+</tr>
+<tr>
+<td align="left">dtype</td>
+<td align="left">数据类型，可选</td>
+</tr>
+<tr>
+<td align="left">order</td>
+<td align="left">有”C”和”F”两个选项,分别代表，行优先和列优先，在计算机内存中的存储元素的顺序。</td>
+</tr>
+</tbody></table>
+<p>下面是一个创建空数组的实例：</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>import numpy as np  x = np.empty([3,2], dtype = int)  print (x)</p>
+<p>输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[ 6917529027641081856  5764616291768666155]</span><br><span class="line"> [ 6917529027641081859 -5764598754299804209]</span><br><span class="line"> [          4497473538      844429428932120]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong> − 数组元素为随机值，因为它们未初始化。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yuunawl.github.io/2020/10/06/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E5%85%A5%E9%97%A8/" data-id="ckh2n5q4400004ou31sj7gzio" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-二进制数获取每一位" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/19/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E8%8E%B7%E5%8F%96%E6%AF%8F%E4%B8%80%E4%BD%8D/" class="article-date">
@@ -1236,7 +1453,7 @@ object =&gt;调用valueOf()，然后依照前面规则转换。如果结果为Na
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
     </div>
   </div>
 
@@ -1247,6 +1464,10 @@ object =&gt;调用valueOf()，然后依照前面规则转换。如果结果为Na
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/10/06/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E5%85%A5%E9%97%A8/">数据可视化入门01</a>
+          </li>
         
           <li>
             <a href="/2020/09/19/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E8%8E%B7%E5%8F%96%E6%AF%8F%E4%B8%80%E4%BD%8D/">二进制数获取每一位</a>
@@ -1262,10 +1483,6 @@ object =&gt;调用valueOf()，然后依照前面规则转换。如果结果为Na
         
           <li>
             <a href="/2020/08/23/js%E5%9F%BA%E7%A1%80-1/">js基础(二)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/23/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
           </li>
         
       </ul>
